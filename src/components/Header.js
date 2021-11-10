@@ -1,28 +1,18 @@
 import { Link } from 'gatsby'
+import { fetch } from 'whatwg-fetch'
 import { Prefetch } from '@layer0/react'
-import { getCategories } from '../lib/cms'
 import React, { useEffect, useState } from 'react'
 
-export default function Header() {
+export default function Header({}) {
   const [categories, setCategories] = useState()
   const [activeTab, setActiveTab] = useState()
-  //   const router = useRouter()
 
-  useEffect(() => {
-    async function fetchCategories() {
-      const { categories: results } = await getCategories()
-      setCategories(results)
-    }
-    fetchCategories()
+  useEffect(async () => {
+    const res = await fetch(`/api/category`).catch((e) => ({
+      error: e.message,
+    }))
+    setCategories(await res.json())
   }, [])
-
-  //   useEffect(() => {
-  //     router.events.on('routeChangeComplete', (url) => {
-  //       if (categories) {
-  //         setActiveTab(categories.findIndex(({ href }) => href === url))
-  //       }
-  //     })
-  //   }, [categories])
 
   return (
     <>
@@ -48,7 +38,7 @@ export default function Header() {
                       className={activeTab === i ? 'border-b-[3px] border-[#ff0000]' : null}
                     >
                       <Link to={href}>
-                        <Prefetch url={`/api/category/${categoryName.toLowerCase()}`}>
+                        <Prefetch url={`/category/${categoryName.toLowerCase()}`}>
                           <a>{categoryName}</a>
                         </Prefetch>
                       </Link>

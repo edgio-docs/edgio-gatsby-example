@@ -6,7 +6,7 @@ import { Prefetch } from '@layer0/react'
 const ListItem = ({ product }) => {
   return (
     <Link to={product.href}>
-      <Prefetch url={`/api${product.href}`}>
+      <Prefetch url={product.href}>
         <a>
           <div className="relative flex flex-col items-center">
             <div

@@ -1,4 +1,7 @@
 {
+  "name": "layer0-gatsby-example",
+  "version": "1.0.0",
+  "license": "0BSD",
   "scripts": {
     "layer0:dev": "layer0 dev",
     "layer0:build": "layer0 build",
@@ -10,40 +13,29 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
-  "name": "layer0-gatsby-example",
-  "version": "1.0.0",
   "dependencies": {
     "gatsby": "^4.1.1",
-    "gatsby-plugin-offline-next": "^5.2.2",
     "gatsby-plugin-react-helmet": "^5.1.0",
     "gatsby-source-filesystem": "^4.1.0",
-    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0",
     "whatwg-fetch": "^3.6.2",
     "workbox-webpack-plugin": "^6.2.2"
   },
   "devDependencies": {
-    "@layer0/cli": "^3.17.3",
-    "@layer0/core": "^3.17.3",
-    "@layer0/devtools": "^3.17.3",
-    "@layer0/gatsby": "^3.17.3",
-    "@layer0/prefetch": "^3.17.3",
-    "@layer0/react": "^3.17.3",
+    "@layer0/cli": "^4.2.0",
+    "@layer0/core": "^4.2.0",
+    "@layer0/devtools": "^4.2.0",
+    "@layer0/gatsby": "^4.2.0",
+    "@layer0/prefetch": "^4.2.0",
+    "@layer0/react": "^4.2.0",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.19",
+    "postcss": "^8.3.11",
     "autoprefixer": "^10.4.0",
     "gatsby-plugin-postcss": "^5.1.0",
-    "node-fetch": "^3.1.0",
-    "postcss": "^8.3.11",
-    "prettier": "^2.4.1",
-    "register-service-worker": "^1.7.2",
-    "tailwindcss": "^2.2.19"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "register-service-worker": "^1.7.2"
   }
 }

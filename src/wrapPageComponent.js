@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet'
 import Header from './components/Header'
 import React, { useState, useEffect } from 'react'
+import { prefetch } from '@layer0/prefetch/window'
 
 export const PageComponent = ({ children }) => {
   const [mounted, setMounted] = useState('print')
@@ -11,7 +12,7 @@ export const PageComponent = ({ children }) => {
     if (serviceWorker) {
       serviceWorker.addEventListener('message', (event) => {
         if (event.data.action === 'prefetch') {
-          // prefetch(event.data.url, event.data.as, event.data.options)
+          prefetch(event.data.url, event.data.as, event.data.options)
         }
       })
     }
