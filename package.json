@@ -1,0 +1,41 @@
+{
+  "name": "layer0-gatsby-example",
+  "version": "1.0.0",
+  "license": "0BSD",
+  "scripts": {
+    "layer0:dev": "layer0 dev",
+    "layer0:build": "layer0 build",
+    "layer0:deploy": "gatsby clean && layer0 deploy",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^4.1.1",
+    "gatsby-plugin-react-helmet": "^5.1.0",
+    "gatsby-source-filesystem": "^4.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "prop-types": "^15.7.2",
+    "react-helmet": "^6.1.0",
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^6.2.2"
+  },
+  "devDependencies": {
+    "@layer0/cli": "^3.17.3",
+    "@layer0/core": "^3.17.3",
+    "@layer0/devtools": "^3.17.3",
+    "@layer0/gatsby": "^3.17.3",
+    "@layer0/prefetch": "^3.17.3",
+    "@layer0/react": "^3.17.3",
+    "autoprefixer": "^10.4.0",
+    "gatsby-plugin-postcss": "^5.1.0",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.1",
+    "register-service-worker": "^1.7.2",
+    "tailwindcss": "^2.2.19"
+  }
+}
