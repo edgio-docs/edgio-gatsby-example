@@ -4,17 +4,17 @@ A demo deployment of Gatsby app to Layer0.
 
 ## Demo
 
-https://layer0-docs-layer0-gatsby-example-default.layer0.link/
+https://layer0-docs-layer0-gatsby-example-default.layer0-limelight.link
 
 ## Try It Now
 
-[![Deploy with Layer0](https://docs.layer0.co/button.svg)](https://app.layer0.co/deploy?repo=https://github.com/layer0-docs/gatsby)
+[![Deploy with Layer0](https://docs.layer0.co/button.svg)](https://app.layer0.co/deploy?repo=https://github.com/layer0-docs/layer0-gatsby-example)
 
 ## Getting Started
 
 ### Clone This Repo
 
-Use `git clone https://github.com/layer0-docs/gatsby.git` to get the files within this repository onto your local machine.
+Use `git clone https://github.com/layer0-docs/layer0-gatsby-example.git` to get the files within this repository onto your local machine.
 
 ### Install dependencies
 
