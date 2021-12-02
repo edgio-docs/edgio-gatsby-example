@@ -14,6 +14,7 @@ export default function HTML(props) {
           name="robots"
           content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
           as="style"
