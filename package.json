@@ -5,7 +5,7 @@
   "scripts": {
     "layer0:dev": "layer0 dev",
     "layer0:build": "layer0 build",
-    "layer0:deploy": "gatsby clean && layer0 deploy",
+    "deploy": "gatsby clean && layer0 deploy",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
