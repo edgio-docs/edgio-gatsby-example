@@ -5,7 +5,6 @@ import RightSidebar from '../components/RightSidebar'
 import ProductPreview from '../components/ProductPreview'
 
 const Commerce = ({ pageContext, location }) => {
-  console.log('[pageContext]:', pageContext)
   const data = Object.keys(pageContext).map((i) => pageContext[i])
   return (
     <>
