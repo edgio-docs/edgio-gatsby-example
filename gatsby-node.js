@@ -1,51 +1,52 @@
 const path = require('path')
-const fetch = require('node-fetch')
 const { InjectManifest } = require('workbox-webpack-plugin')
+const fetch = (...args) => import(`node-fetch`).then(({ default: fetch }) => fetch(...args))
 
-const apiUrl = 'https://layer0-docs-layer0-examples-api-default.layer0.link'
+const apiUrl = 'https://layer0-docs-layer0-ecommmerce-api-example-default.layer0-limelight.link'
 
-async function getCategories() {
-  const ret = { categories: [] }
-  const res = await fetch(`${apiUrl}/category`).catch((e) => ({
-    error: e.message,
-  }))
-  ret.categories = await res.json()
-  return ret
-}
-
-exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage === 'build-javascript') {
     actions.setWebpackConfig({
       plugins: [
         new InjectManifest({
-          swSrc: './service-worker.js',
+          swSrc: './sw/service-worker.js',
         }),
       ],
     })
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ actions }) => {
   const { createPage } = actions
+  const commerceTemplate = path.resolve(`src/templates/commerce.js`)
   const productTemplate = path.resolve(`src/templates/product.js`)
-  const categories = (await getCategories())['categories']
-  categories.forEach((category) => {
-    const products = category['items']
-    products.forEach((edge) => {
+  let resp = await fetch(`${apiUrl}/products/all`)
+  if (resp.ok) {
+    let data = await resp.json()
+    createPage({
+      path: '/commerce',
+      component: commerceTemplate,
+      context: data,
+    })
+    data.forEach((i) => {
       createPage({
-        path: edge.href,
+        path: `/product/${i.slug}`,
         component: productTemplate,
-        context: edge,
+        context: [i],
       })
     })
-  })
-  const categoryTemplate = path.resolve(`src/templates/category.js`)
-  categories.forEach((category) => {
-    const products = category['items']
-    createPage({
-      path: category.href,
-      component: categoryTemplate,
-      context: { products, slug: category.href },
-    })
-  })
+  }
+  resp = await fetch(`${apiUrl}/categories/all`)
+  if (resp.ok) {
+    let data = await resp.json()
+    for (let i = 0; i < data.length; i++) {
+      resp = await fetch(`${apiUrl}/categories/${data[i].slug}`)
+      let pageData = (await resp.json())['items']
+      createPage({
+        path: `/commerce/${data[i].slug}`,
+        component: commerceTemplate,
+        context: pageData,
+      })
+    }
+  }
 }
