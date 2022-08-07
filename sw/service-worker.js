@@ -16,7 +16,7 @@ new Prefetcher({
       // Relativize the absolute link using json-query helpers
       // relativize function is applied on the array returned by the selector
       {
-        jsonQuery: 'pageProps.data.images.url:relativize',
+        jsonQuery: 'result.pageContext[**].images.url:relativize',
         jsonQueryOptions: {
           locals: {
             relativize: (input) => {
