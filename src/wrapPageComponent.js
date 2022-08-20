@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import Layer0RUM from './rum'
 import Navbar from './components/Navbar'
+import React, { useEffect } from 'react'
 import { install } from '@layer0/prefetch/window'
 import installDevtools from '@layer0/devtools/install'
 
 export const PageComponent = ({ children }) => {
   useEffect(() => {
-    install()
     installDevtools()
+    // As all the pages are static assets, all come from S3, we can afford to have includeCacheMisses: true
+    install({ includeCacheMisses: true })
+    Layer0RUM('21cdc468-0104-44f0-95d3-8f523e8083d8')
   }, [])
   return (
     <>

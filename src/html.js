@@ -9,7 +9,6 @@ export default function HTML(props) {
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="twitter:card" content="summary_large_image" />
         <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         {props.headComponents}
