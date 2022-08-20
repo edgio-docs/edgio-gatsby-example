@@ -1,6 +1,6 @@
 import React from 'react'
-import './registerServiceWorker'
 import './src/styles/global.css'
+import './layer0/registerServiceWorker'
 import { PageComponent } from './src/wrapPageComponent'
 
 export const wrapPageElement = ({ element }) => {

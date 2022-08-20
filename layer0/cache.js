@@ -1,14 +1,47 @@
-export const API_CACHE_HANDLER = ({ removeUpstreamResponseHeader, cache, proxy }) => {
-  removeUpstreamResponseHeader('cache-control')
+export const API_CACHE_HANDLER = ({ cache, proxy }) => {
   cache({
+    edge: {
+      maxAgeSeconds: 60 * 60,
+      // Cache responses even if they contain cache-control: private header
+      // https://docs.layer0.co/guides/caching#private
+      // https://docs.layer0.co/docs/api/core/interfaces/_router_cacheoptions_.edgecacheoptions.html#forceprivatecaching
+      forcePrivateCaching: true,
+    },
     browser: {
+      // Don't save the response in the browser
       maxAgeSeconds: 0,
+      // Save the response in the browser via Layer0 service worker
       serviceWorkerSeconds: 60 * 60 * 24,
     },
+  })
+  proxy('api', { path: ':path*' })
+}
+
+export const IMAGE_CACHE_HANDLER = ({ cache, proxy }) => {
+  cache({
     edge: {
-      maxAgeSeconds: 60 * 60 * 24 * 365 * 10,
-      staleWhileRevalidateSeconds: 60 * 60 * 24,
+      maxAgeSeconds: 60 * 60,
+      // Cache responses even if they contain cache-control: private header
+      // https://docs.layer0.co/guides/caching#private
+      // https://docs.layer0.co/docs/api/core/interfaces/_router_cacheoptions_.edgecacheoptions.html#forceprivatecaching
+      forcePrivateCaching: true,
+    },
+    browser: {
+      // Don't save the response in the browser
+      maxAgeSeconds: 0,
+      // Save the response in the browser via Layer0 service worker
+      serviceWorkerSeconds: 60 * 60 * 24,
     },
   })
-  proxy('api')
+  proxy('image', { path: '/' })
+}
+
+export const ONE_DAY_CACHE_HANDLER = ({ cache }) => {
+  // Set the caching values
+  cache({
+    edge: {
+      // Save the response(s) [whether stale or updated] in the edge POP for a year
+      maxAgeSeconds: 60 * 60 * 24,
+    },
+  })
 }

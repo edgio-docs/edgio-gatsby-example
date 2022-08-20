@@ -1,22 +1,44 @@
 import React from 'react'
-import Seo from '../components/Seo'
 
 const Home = () => {
-  const meta = {
-    title: 'Layer0 Gatsby Example',
-    description:
-      'This open source project demonstrates Prefetching, and Image Optimization with Layer0 using Gatsby.',
-    url: 'https://layer0-docs-layer0-gatsby-example-default.layer0.link',
-    image:
-      'https://layer0-docs-og-image-default.layer0.link/api?title=Layer0 Gatsby Example&width=1400&height=720',
-  }
   return (
     <>
-      <Seo {...meta} />
-      <div className="flex flex-col justify-center items-center w-full min-h-[75vh]">
-        <p className="text-center">
-          This is an example Gatsby app powered by Layer0. Click a category above to get started.
-        </p>
+      <div className="flex min-h-[calc(100vh-56px)] flex-col items-center justify-center px-5 md:px-0">
+        <div className="flex w-full flex-row flex-wrap justify-center md:w-[700px]">
+          <div className="flex w-[330px] flex-col items-start justify-start rounded p-5 md:w-1/2">
+            <h1 className="text-xl font-bold text-white">Gatsby with Layer0</h1>
+            <h3 className="mt-2 text-lg text-[#FFFFFF75]">Layer0 supports all of the most powerful features of Gatsby!</h3>
+            <a className="mt-auto text-[#01B18D] hover:underline" href="https://docs.layer0.co/guides/gatsby" target="_blank">
+              Learn More &rarr;
+            </a>
+          </div>
+          <div className="flex w-[330px] flex-col items-start justify-start rounded p-5 md:w-1/2">
+            <h1 className="text-xl font-bold text-white">React with Layer0</h1>
+            <h3 className="mt-2 text-lg text-[#FFFFFF75]">Layer0 supports all of the most powerful features of React!</h3>
+            <a className="mt-auto text-[#01B18D] hover:underline" href="https://docs.layer0.co/guides/react" target="_blank">
+              Learn More &rarr;
+            </a>
+          </div>
+          <div className="flex w-[330px] flex-col items-start justify-start rounded p-5 md:w-1/2">
+            <h1 className="text-xl font-bold text-white">Caching with Layer0</h1>
+            <h3 className="mt-2 mb-5 text-lg text-[#FFFFFF75]">
+              While most CDNs only cache content on your asset URLs, Layer0 caches content on your page URLs using EdgeJS, allowing you to control
+              caching within your application code.
+            </h3>
+            <a className="mt-auto text-[#01B18D] hover:underline" href="https://docs.layer0.co/guides/caching" target="_blank">
+              Learn More &rarr;
+            </a>
+          </div>
+          <div className="flex w-[330px] flex-col items-start justify-start rounded p-5 md:w-1/2">
+            <h1 className="text-xl font-bold text-white">Layer0 Prefetching</h1>
+            <h3 className="mt-2 text-lg text-[#FFFFFF75]">
+              Layer0 allows you to speed up the user’s browsing experience by prefetching pages and API calls that they are likely to need.
+            </h3>
+            <a className="mt-auto text-[#01B18D] hover:underline" href="https://docs.layer0.co/guides/prefetching" target="_blank">
+              Learn More &rarr;
+            </a>
+          </div>
+        </div>
       </div>
     </>
   )

@@ -1,33 +1,21 @@
-import { Helmet } from 'react-helmet'
-import Header from './components/Header'
-import React, { useState, useEffect } from 'react'
-import { prefetch } from '@layer0/prefetch/window'
+import Layer0RUM from './rum'
+import Navbar from './components/Navbar'
+import React, { useEffect } from 'react'
+import { install } from '@layer0/prefetch/window'
+import installDevtools from '@layer0/devtools/install'
 
 export const PageComponent = ({ children }) => {
-  const [mounted, setMounted] = useState('print')
   useEffect(() => {
-    setMounted('all')
-    // register a listener for SW messages to prefetch images from the PLP API responses
-    const { serviceWorker } = navigator
-    if (serviceWorker) {
-      serviceWorker.addEventListener('message', (event) => {
-        if (event.data.action === 'prefetch') {
-          prefetch(event.data.url, event.data.as, event.data.options)
-        }
-      })
-    }
+    installDevtools()
+    // As all the pages are static assets, all come from S3, we can afford to have includeCacheMisses: true
+    install({ includeCacheMisses: true })
+    Layer0RUM('21cdc468-0104-44f0-95d3-8f523e8083d8')
   }, [])
   return (
     <>
-      <Helmet>
-        <link
-          media={mounted}
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        />
-      </Helmet>
-      <Header />
+      <Navbar />
       {children}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
     </>
   )
 }

@@ -9,31 +9,14 @@ export default function HTML(props) {
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="robots"
-          content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link
-          as="style"
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          />
-        </noscript>
+        <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         {props.headComponents}
       </head>
-      <body className="font-display" {...props.bodyAttributes}>
+      <body className="flex min-h-screen flex-col bg-gradient-to-br from-[#9a1ab1] via-[#004966] to-[#01B18D] font-display" {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
-        <script defer src="/__layer0__/devtools/install.js"></script>
       </body>
     </html>
   )

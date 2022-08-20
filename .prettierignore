@@ -2,3 +2,5 @@
 package.json
 package-lock.json
 public
+.layer0
+node_modules
