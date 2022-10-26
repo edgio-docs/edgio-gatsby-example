@@ -67,5 +67,9 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
 # Layer0 generated build directory
 .layer0
+
+# Edgio generated build directory
+.edgio

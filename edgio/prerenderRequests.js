@@ -15,6 +15,6 @@ export default async function getPathsToPrerender() {
   } else {
     console.log('The fetch call failed, no paths to populate cache with.')
   }
-  // Finally, return all the paths with the intended mapping to Layer0 prerender syntax
+  // Finally, return all the paths with the intended mapping to Edgio prerender syntax
   return prerenderPaths.filter((i) => i).map((i) => ({ path: i }))
 }

@@ -8,7 +8,7 @@ https://layer0-docs-layer0-gatsby-example-default.layer0-limelight.link
 
 ## Try It Now
 
-[![Deploy with Layer0](https://docs.layer0.co/button.svg)](https://app.layer0.co/deploy?repo=https://github.com/layer0-docs/layer0-gatsby-example)
+[![Deploy with Layer0](https://docs.edg.io/button.svg)](https://app.layer0.co/deploy?repo=https://github.com/layer0-docs/layer0-gatsby-example)
 
 ## Getting Started
 
@@ -52,4 +52,4 @@ Deploying requires an account on Layer0. [Sign up here for free](https://app.lay
 npm run layer0:deploy
 ```
 
-See [deploying](https://docs.layer0.co/guides/deploying) for more information.
+See [deploying](https://docs.edg.io/guides/deploying) for more information.

@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { navigate, Link } from 'gatsby'
-import { Prefetch } from '@layer0/react'
+import { Prefetch } from '@edgio/react'
 import { useEffect, useState } from 'react'
 
 const relevance = [
