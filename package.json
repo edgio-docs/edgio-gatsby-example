@@ -1,14 +1,15 @@
 {
   "name": "layer0-gatsby-example",
   "scripts": {
-    "edgio:dev": "edgio dev",
-    "edgio:build": "edgio build",
-    "edgio:deploy": "gatsby clean && edgio deploy",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "edgio:dev": "edgio dev",
+    "edgio:build": "edgio build",
+    "edgio:deploy": "gatsby clean && edgio deploy",
+    "edgio:production": "edgio run --production",
     "format": "prettier '**/*' --write --ignore-unknown"
   },
   "dependencies": {
