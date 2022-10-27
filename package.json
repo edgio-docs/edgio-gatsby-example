@@ -21,7 +21,7 @@
     "@edgio/cli": "^5.0.4-next-1666789307-b6f5497.0",
     "@edgio/core": "^5.0.4-next-1666789307-b6f5497.0",
     "@edgio/devtools": "^5.0.4-next-1666789307-b6f5497.0",
-    "@edgio/gatsby": "^5.0.4-next-1666789307-b6f5497.0",
+    "@edgio/gatsby": "^5.0.4-next-1666906329-d9651bf.0",
     "@edgio/prefetch": "^5.0.4-next-1666789307-b6f5497.0",
     "@edgio/react": "^5.0.4-next-1666789307-b6f5497.0",
     "@heroicons/react": "^1.0.6",
